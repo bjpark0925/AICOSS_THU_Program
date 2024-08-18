@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        hr {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #DBDBDB;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            flex: 1 0 100%;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #DBDBDB;
+        }
+
+        textarea {
+            flex: 1 0 40%; /* Adjust the width of the textarea as needed */
+        }
+
+        button {
+            width: 623px;
+            height: 67px;
+            top: 434px;
+            left: 754px;
+            border-radius: 10px;
+
+
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px; /* Adjusted to match the input fields */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #note {
+            flex: 1 0 100%; /* Ensure the textarea takes full width on smaller screens */
+            background: #DBDBDB;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Lead information</h1>
+    <hr>
+    <form action="#" method="post">
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="tel">Telephone Number:</label>
+        <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
+            title="Please enter a valid phone number (XXX-XXX-XXXX)">
+
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" required>
+
+        <label for="note">Note:</label>
+        <textarea id="note" name="note" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event){
+            event.preventDefault(); // 폼 제출을 막아 페이지 새로고침을 방지합니다.
+            var name = document.getElementById("name").value; // 이름을 가져옵니다.
+            localStorage.setItem("name", name); // 이름을 localStorage에 저장합니다.
+            window.location.href = "lead_report.html"; // 리드 보고서 페이지로 이동합니다.
+        });
+    </script>
+</body>
+</html>
