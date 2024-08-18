@@ -1,0 +1,8 @@
+#
+# if you have a GPU available
+#
+conda install transformers bitsandbytes langchain accelerate sentence-transformers faiss-gpu openai
+#
+# if you only use a CPU
+#
+conda install transformers bitsandbytes langchain accelerate sentence-transformers faiss-cpu openai

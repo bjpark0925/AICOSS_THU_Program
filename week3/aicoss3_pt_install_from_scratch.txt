@@ -1,0 +1,11 @@
+conda create -n aicoss3
+conda activate aicoss3
+conda install python=3.11 matplotlib seaborn pandas pyarrow scikit-learn mlxtend nltk jupyterlab tqdm ipywidgets
+#
+# in case you own an Nvidia grahics card on your device
+#
+conda install pytorch torchvision torchaudio torchtext pytorch-cuda=11.8 -c pytorch -c nvidia
+#
+# in case you DON NOT own an Nvidia grahics card on your device
+#
+conda install pytorch torchvision torchaudio torchtext -c pytorch
